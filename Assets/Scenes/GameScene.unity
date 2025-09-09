@@ -212,6 +212,54 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &589914341
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 589914343}
+  - component: {fileID: 589914342}
+  m_Layer: 0
+  m_Name: EnemySpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &589914342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589914341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 455a31c3cbd66dc40b304f67755b6e12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 2801007354087044774, guid: 779e93e7f35600543a6c49c979236f3c, type: 3}
+  terrain: {fileID: 1872639900}
+  spawnInterval: 2
+  maxEnemies: 20
+--- !u!4 &589914343
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589914341}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.220358, y: -3.7247007, z: 13.334457}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &940507141
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,6 +352,58 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 30, y: 10, z: 0}
+--- !u!1 &1282206348
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1282206350}
+  - component: {fileID: 1282206349}
+  m_Layer: 0
+  m_Name: DefenderManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1282206349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282206348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7add4e1a239eea841a8dd645e9c964b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defenderPrefab: {fileID: 3029935204017212512, guid: 90caf76d9f5c51b4d8d2f5b1bfea2038, type: 3}
+  terrain: {fileID: 1872639900}
+  placementHeight: 0.5
+  minDistanceFromPath: 2
+  sampleStep: 2
+  maxPositions: 3
+  autoPlaceAllDefenders: 1
+  gizmoSphereSize: 0.25
+--- !u!4 &1282206350
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282206348}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -33.05638, y: -23.224422, z: -17.024223}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1872639899
 GameObject:
   m_ObjectHideFlags: 0
@@ -339,13 +439,10 @@ MonoBehaviour:
   gridSize: 20
   cellSize: 1
   heightScale: 5
-  noiseScale: 0.2
-  randomizeSeed: 1
-  seed: 0
-  numberOfPaths: 3
-  pathWidth: 2
-  spawnPoints: []
   towerPrefab: {fileID: 6432942029927271199, guid: 5aedd36435f3e6644aa81e1da27d6075, type: 3}
+  towerInstance: {fileID: 0}
+  spawnPoints: []
+  pathPoints: []
 --- !u!23 &1872639901
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -442,3 +539,5 @@ SceneRoots:
   - {fileID: 940507144}
   - {fileID: 449124876}
   - {fileID: 1872639903}
+  - {fileID: 1282206350}
+  - {fileID: 589914343}
